@@ -1,5 +1,5 @@
 import os
-from flask import Flask, send_from_directory
+from flask import Flask, send_from_directory, request
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 UPLOAD_DIR = os.path.join(BASE_DIR, "storage", "upload")
@@ -18,10 +18,4 @@ def allowed_file(filename):
         filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-@app.route("/")
-def home_view():
-    return "<h1>Hello world</h1>"
-
-@app.route("/static/uploads/<filename>")
-def static_uploads_view(filename):
-    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+from .views import *
