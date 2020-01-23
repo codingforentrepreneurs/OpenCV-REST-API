@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"python.pythonPath": "/Users/cfe/.local/share/virtualenvs/opencv-rest-api-23LEgOxx/bin/python"
+	}
+}
