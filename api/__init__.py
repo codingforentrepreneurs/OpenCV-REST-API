@@ -20,3 +20,4 @@ def allowed_file(filename):
 
 
 from .views import *
+from .cv.views import *
