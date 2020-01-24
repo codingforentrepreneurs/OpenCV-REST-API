@@ -36,3 +36,7 @@ _Lessons 1-3: no significant code added_
 
 [16 - OpenCV Upload & Extract View](../../tree/de624f4c6582a4181a987117fa542a48ddb4b830/)
 
+[17 - Serving Static Files from Local Path](../../tree/86840056cde90327c937e28fbfd6d1cfc25ca69d/)
+
+[18 - Serve Faces Output as Live URL](../../tree/6a2e77fc44b65a8eec0b5158cdf5679aebad90ac/)
+
