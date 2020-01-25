@@ -1,0 +1,1 @@
+docker build -t opencv-rest-api -f Dockerfile .

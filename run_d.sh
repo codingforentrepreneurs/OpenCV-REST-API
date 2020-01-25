@@ -1,0 +1,1 @@
+docker run -e SERVER_NAME="0.0.0.0:8000" -e PORT="8000" -it -p 8000:8000 opencv-rest-api

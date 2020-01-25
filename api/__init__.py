@@ -13,7 +13,8 @@ for d in [UPLOAD_DIR, RESULTS_DIR, OUTPUT_DIR]:
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_DIR
 app.config['OUTPUT_DIR'] = OUTPUT_DIR
-app.config['SERVER_NAME'] = '127.0.0.1:8000'
+PORT = os.environ.get('PORT') or 5000
+app.config['SERVER_NAME'] = os.environ.get('SERVER_NAME') or f'127.0.0.1:{PORT}'
 
 def allowed_file(filename):
     return "." in filename and \
