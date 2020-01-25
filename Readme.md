@@ -40,3 +40,5 @@ _Lessons 1-3: no significant code added_
 
 [18 - Serve Faces Output as Live URL](../../tree/6a2e77fc44b65a8eec0b5158cdf5679aebad90ac/)
 
+[19 - Deploy to Heroku via Docker](../../tree/1092d769396f5d59ffe7005b9142f3cfe89858c1/)
+
