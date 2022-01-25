@@ -14,7 +14,7 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_DIR
 app.config['OUTPUT_DIR'] = OUTPUT_DIR
 PORT = os.environ.get('PORT') or 8000
-app.config['SERVER_NAME'] = os.environ.get('SERVER_NAME') or f'127.0.0.1:{PORT}'
+app.config['SERVER_NAME'] = os.environ.get('SERVER_NAME') or f'0.0.0.0:{PORT}'
 
 def allowed_file(filename):
     return "." in filename and \
