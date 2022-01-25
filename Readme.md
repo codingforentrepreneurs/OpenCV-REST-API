@@ -3,6 +3,8 @@ Extract faces from any image by building a REST API microservice using OpenCV
 
 [![OpenCV Rest API](https://static.codingforentrepreneurs.com/media/projects/opencv-rest-api/images/share/OpenCV_Rest_API_-_Share.jpg)](https://www.codingforentrepreneurs.com/projects/opencv-rest-api)
 
+> Code upgraded for Python 3.10
+
 ### Lesson Code
 _Lessons 1-3: no significant code added_
 
