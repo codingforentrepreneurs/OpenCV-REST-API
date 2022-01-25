@@ -1,10 +1,8 @@
 # Base Image
-FROM python:3.7
+FROM python:3.10.2-slim
 
-RUN mkdir /app
+COPY . /app
 WORKDIR /app
-
-ADD . /app
 
 ENV PYTHONUNBUFFERED 1
 ENV LANG C.UTF-8
@@ -23,14 +21,25 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python3-dev \
         python3-venv \
         git \
+        gcc \
+        make \
+        locales \
         && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install --upgrade pip
-RUN pip3 install pipenv
-RUN pip3 install opencv-contrib-python
+# Update Locales
+RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && locale-gen
 
-RUN pipenv install --skip-lock --system --dev
+# Create a virtual environment in /opt
+RUN python3 -m venv /opt/venv
 
-CMD gunicorn api.wsgi:app --bind 0.0.0.0:$PORT
+# Install requirments to new virtual environment
+RUN /opt/venv/bin/pip install -r requirements.txt
+
+# purge unused
+RUN apt-get remove -y --purge git make gcc build-essential \
+    && apt-get autoremove -y \
+    && rm -rf /var/lib/apt/lists/*
+
+CMD /opt/venv/bin/gunicorn api.wsgi:app --bind "0.0.0.0:${PORT:-8000}"
